@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('proveedors', function (Blueprint $table) {
             $table->string('no_documento',20)->primary();
-            $table->unsignedInteger('cod_tipo_documento');
+            $table->integer('cod_tipo_documento');
             $table->foreign('cod_tipo_documento')
                 ->references('id_tipo_documento')
                 ->on('tipo_de_documentos')
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('apellido',30);
             $table->string('nombre_comercial',20);
             $table->string('direccion',20);
-            $table->unsignedInteger('cod_ciudad');
+            $table->integer('cod_ciudad');
             $table->foreign('cod_ciudad')
                 ->references('codigo_ciudad')
                 ->on('ciudads')

@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('detalle_facturas', function (Blueprint $table) {            
             $table->string('cod_factura',20);
             $table->foreign('cod_factura')
-            ->references('num_factura')
-            ->on('facturas')
-            ->onDelete('cascade');
-            $table->unsignedInteger('cod_articulo');
+                ->references('num_factura')
+                ->on('facturas')
+                ->onDelete('cascade');
+            $table->integer('cod_articulo');
             $table->foreign('cod_articulo')
-            ->references('id_articulo')
-            ->on('articulos')
-            ->onDelete('cascade');
+                ->references('id_articulo')
+                ->on('articulos')
+                ->onDelete('cascade');
             $table->primary(['cod_factura','cod_articulo']);
             $table->integer('cantidad');
             $table->decimal('total',10,0);

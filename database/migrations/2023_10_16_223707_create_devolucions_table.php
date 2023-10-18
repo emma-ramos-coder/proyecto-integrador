@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('devolucions', function (Blueprint $table) {
             $table->string('cod_detalle_factura',20);
             $table->foreign('cod_detalle_factura')
-            ->references('cod_factura')
-            ->on('detalle_facturas')
-            ->onDelete('cascade');
-            $table->unsignedInteger('cod_detalle_articulo');
+                ->references('cod_factura')
+                ->on('detalle_facturas')
+                ->onDelete('cascade');
+            $table->integer('cod_detalle_articulo');
             $table->foreign('cod_detalle_articulo')
-            ->references('cod_articulo')
-            ->on('detalle_facturas')
-            ->onDelete('cascade');
+                ->references('cod_articulo')
+                ->on('detalle_facturas')
+                ->onDelete('cascade');
             $table->primary(['cod_detalle_factura','cod_detalle_articulo']);
             $table->string('motivo',15);
             $table->string('fecha_devolucion',10);

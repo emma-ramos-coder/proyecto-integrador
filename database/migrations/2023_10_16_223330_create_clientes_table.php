@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->string('documento',15)->primary();
-            $table->unsignedInteger('cod_tipo_documento');
+            $table->integer('cod_tipo_documento');
             $table->foreign('cod_tipo_documento')
                 ->references('id_tipo_documento')
                 ->on('tipo_de_documentos')
@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('nombres',30);
             $table->string('apellidos',30);
             $table->string('direccion',20);
-            $table->unsignedInteger('cod_ciudad');
+            $table->integer('cod_ciudad');
             $table->foreign('cod_ciudad')
                 ->references('codigo_ciudad')
                 ->on('ciudads')

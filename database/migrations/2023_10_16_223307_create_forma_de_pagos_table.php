@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('forma_de_pagos', function (Blueprint $table) {
-            $table->increments('id_forma_pago');
+            $table->integer('id_forma_pago')->primary();
             $table->string('descripcion_forma_pago',20);
             $table->timestamps();
         });

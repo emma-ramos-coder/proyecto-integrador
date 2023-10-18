@@ -12,21 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('articulos', function (Blueprint $table) {
-            $table->increments('id_articulo');
+            $table->integer('id_articulo')->primary();
             $table->string('descripcion',30);
             $table->decimal('precio_venta',10,0);
             $table->decimal('precio_costo',10,0);
             $table->integer('stock');
-            $table->unsignedInteger('cod_tipo_articulo');
+            $table->integer('cod_tipo_articulo');
             $table->foreign('cod_tipo_articulo')
-            ->references('id_tipo_articulo')
-            ->on('tipo_articulos')
-            ->onDelete('cascade');
+                ->references('id_tipo_articulo')
+                ->on('tipo_articulos')
+                ->onDelete('cascade');
             $table->string('cod_proveedor',20);
             $table->foreign('cod_proveedor')
-            ->references('no_documento')
-            ->on('proveedors')
-            ->onDelete('cascade');
+                ->references('no_documento')
+                ->on('proveedors')
+                ->onDelete('cascade');
             $table->string('fecha_ingreso',15);
             $table->timestamps();
         });

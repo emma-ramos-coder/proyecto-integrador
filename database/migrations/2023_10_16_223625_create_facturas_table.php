@@ -15,16 +15,16 @@ return new class extends Migration
             $table->string('num_factura',20)->primary();
             $table->string('cod_cliente',15);
             $table->foreign('cod_cliente')
-            ->references('documento')
-            ->on('clientes')
-            ->onDelete('cascade');
+                ->references('documento')
+                ->on('clientes')
+                ->onDelete('cascade');
             $table->string('nombre_empleado',30);
             $table->string('fecha_facturacion',15);
-            $table->unsignedInteger('cod_forma_pago');
+            $table->integer('cod_forma_pago');
             $table->foreign('cod_forma_pago')
-            ->references('id_forma_pago')
-            ->on('forma_de_pagos')
-            ->onDelete('cascade');
+                ->references('id_forma_pago')
+                ->on('forma_de_pagos')
+                ->onDelete('cascade');
             $table->decimal('total_factura',10,0);
             $table->decimal('iva',10,0);
             $table->timestamps();
