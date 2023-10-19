@@ -2,23 +2,76 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * Class DetalleFactura
+ *
+ * @property $cod_factura
+ * @property $cod_articulo
+ * @property $cantidad
+ * @property $total
+ * @property $created_at
+ * @property $updated_at
+ *
+ * @property Articulo $articulo
+ * @property Devolucion[] $devolucions
+ * @property Devolucion $devolucion
+ * @property Factura $factura
+ * @package App
+ * @mixin \Illuminate\Database\Eloquent\Builder
+ */
 class DetalleFactura extends Model
 {
-    use HasFactory;
-    protected $fillable = [        
-        'cantidad',
-        'total'
+    
+    static $rules = [
+		'cod_factura' => 'required',
+		'cod_articulo' => 'required',
+		'cantidad' => 'required',
+		'total' => 'required',
     ];
-    public function facturas(){
-        return $this->belongsTo(Factura::class);
+
+    protected $perPage = 20;
+
+    /**
+     * Attributes that should be mass-assignable.
+     *
+     * @var array
+     */
+    protected $fillable = ['cod_factura','cod_articulo','cantidad','total'];
+
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function articulo()
+    {
+        return $this->hasOne('App\Models\Articulo', 'id_articulo', 'cod_articulo');
     }
-    public function articulos(){
-        return $this->belongsTo(Articulo::class);
-    }  
-    public function devolucion(){
-        return $this->hasMany(Devolucion::class);
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function devolucions()
+    {
+        return $this->hasMany('App\Models\Devolucion', 'cod_detalle_articulo', 'cod_articulo');
     }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function devolucion()
+    {
+        return $this->hasOne('App\Models\Devolucion', 'cod_detalle_factura', 'cod_factura');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function factura()
+    {
+        return $this->hasOne('App\Models\Factura', 'num_factura', 'cod_factura');
+    }
+    
+
 }
