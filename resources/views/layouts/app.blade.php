@@ -30,6 +30,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('tipo_de_documentos.index') }}">{{ __('Tipos de documento') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('ciudads.index') }}">{{ __('Ciudades') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('tipo_articulos.index') }}">{{ __('Tipos de articulo') }}</a>
+                        </li>
 
                     </ul>
 
