@@ -2,11 +2,6 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('num_factura') }}
-            {{ Form::text('num_factura', $factura->num_factura, ['class' => 'form-control' . ($errors->has('num_factura') ? ' is-invalid' : ''), 'placeholder' => 'Num Factura']) }}
-            {!! $errors->first('num_factura', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('cod_cliente') }}
             {{ Form::text('cod_cliente', $factura->cod_cliente, ['class' => 'form-control' . ($errors->has('cod_cliente') ? ' is-invalid' : ''), 'placeholder' => 'Cod Cliente']) }}
             {!! $errors->first('cod_cliente', '<div class="invalid-feedback">:message</div>') !!}

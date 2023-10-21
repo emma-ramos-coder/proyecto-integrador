@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Id Articulo</th>
 										<th>Descripcion</th>
 										<th>Precio Venta</th>
 										<th>Precio Costo</th>
@@ -53,7 +52,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $articulo->id_articulo }}</td>
 											<td>{{ $articulo->descripcion }}</td>
 											<td>{{ $articulo->precio_venta }}</td>
 											<td>{{ $articulo->precio_costo }}</td>

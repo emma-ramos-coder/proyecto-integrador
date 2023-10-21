@@ -2,14 +2,9 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('cod_detalle_factura') }}
-            {{ Form::text('cod_detalle_factura', $devolucion->cod_detalle_factura, ['class' => 'form-control' . ($errors->has('cod_detalle_factura') ? ' is-invalid' : ''), 'placeholder' => 'Cod Detalle Factura']) }}
-            {!! $errors->first('cod_detalle_factura', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('cod_detalle_articulo') }}
-            {{ Form::text('cod_detalle_articulo', $devolucion->cod_detalle_articulo, ['class' => 'form-control' . ($errors->has('cod_detalle_articulo') ? ' is-invalid' : ''), 'placeholder' => 'Cod Detalle Articulo']) }}
-            {!! $errors->first('cod_detalle_articulo', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('cod_detalle_facturas') }}
+            {{ Form::text('cod_detalle_facturas', $devolucion->cod_detalle_facturas, ['class' => 'form-control' . ($errors->has('cod_detalle_facturas') ? ' is-invalid' : ''), 'placeholder' => 'Cod Detalle Facturas']) }}
+            {!! $errors->first('cod_detalle_facturas', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('motivo') }}

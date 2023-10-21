@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class FormaDePago
  *
- * @property $id_forma_pago
+ * @property $id
  * @property $descripcion_forma_pago
  * @property $created_at
  * @property $updated_at
@@ -20,7 +20,6 @@ class FormaDePago extends Model
 {
     
     static $rules = [
-		'id_forma_pago' => 'required',
 		'descripcion_forma_pago' => 'required',
     ];
 
@@ -31,7 +30,7 @@ class FormaDePago extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_forma_pago','descripcion_forma_pago'];
+    protected $fillable = ['descripcion_forma_pago'];
 
 
     /**
@@ -39,7 +38,7 @@ class FormaDePago extends Model
      */
     public function facturas()
     {
-        return $this->hasMany('App\Models\Factura', 'cod_forma_pago', 'id_forma_pago');
+        return $this->hasMany('App\Models\Factura', 'cod_forma_pago', 'id');
     }
     
 

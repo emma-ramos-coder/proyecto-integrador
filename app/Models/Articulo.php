@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Articulo
  *
- * @property $id_articulo
+ * @property $id
  * @property $descripcion
  * @property $precio_venta
  * @property $precio_costo
@@ -28,7 +28,6 @@ class Articulo extends Model
 {
     
     static $rules = [
-		'id_articulo' => 'required',
 		'descripcion' => 'required',
 		'precio_venta' => 'required',
 		'precio_costo' => 'required',
@@ -45,7 +44,7 @@ class Articulo extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_articulo','descripcion','precio_venta','precio_costo','stock','cod_tipo_articulo','cod_proveedor','fecha_ingreso'];
+    protected $fillable = ['descripcion','precio_venta','precio_costo','stock','cod_tipo_articulo','cod_proveedor','fecha_ingreso'];
 
 
     /**
@@ -53,7 +52,7 @@ class Articulo extends Model
      */
     public function detalleFacturas()
     {
-        return $this->hasMany('App\Models\DetalleFactura', 'cod_articulo', 'id_articulo');
+        return $this->hasMany('App\Models\DetalleFactura', 'cod_articulo', 'id');
     }
     
     /**
@@ -61,7 +60,7 @@ class Articulo extends Model
      */
     public function proveedor()
     {
-        return $this->hasOne('App\Models\Proveedor', 'no_documento', 'cod_proveedor');
+        return $this->hasOne('App\Models\Proveedor', 'id', 'cod_proveedor');
     }
     
     /**
@@ -69,7 +68,7 @@ class Articulo extends Model
      */
     public function tipoArticulo()
     {
-        return $this->hasOne('App\Models\TipoArticulo', 'id_tipo_articulo', 'cod_tipo_articulo');
+        return $this->hasOne('App\Models\TipoArticulo', 'id', 'cod_tipo_articulo');
     }
     
 

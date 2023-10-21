@@ -21,10 +21,6 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Tipo Documento:</strong>
-                            {{ $tipoDeDocumento->id_tipo_documento }}
-                        </div>
-                        <div class="form-group">
                             <strong>Descripcion:</strong>
                             {{ $tipoDeDocumento->descripcion }}
                         </div>

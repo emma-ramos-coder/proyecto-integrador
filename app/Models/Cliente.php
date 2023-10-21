@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Cliente
  *
- * @property $documento
+ * @property $id
+ * @property $num_documento
  * @property $cod_tipo_documento
  * @property $nombres
  * @property $apellidos
@@ -27,7 +28,7 @@ class Cliente extends Model
 {
     
     static $rules = [
-		'documento' => 'required',
+		'num_documento' => 'required',
 		'cod_tipo_documento' => 'required',
 		'nombres' => 'required',
 		'apellidos' => 'required',
@@ -43,7 +44,7 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['documento','cod_tipo_documento','nombres','apellidos','direccion','cod_ciudad','telefono'];
+    protected $fillable = ['num_documento','cod_tipo_documento','nombres','apellidos','direccion','cod_ciudad','telefono'];
 
 
     /**
@@ -51,7 +52,7 @@ class Cliente extends Model
      */
     public function ciudad()
     {
-        return $this->hasOne('App\Models\Ciudad', 'codigo_ciudad', 'cod_ciudad');
+        return $this->hasOne('App\Models\Ciudad', 'id', 'cod_ciudad');
     }
     
     /**
@@ -59,7 +60,7 @@ class Cliente extends Model
      */
     public function facturas()
     {
-        return $this->hasMany('App\Models\Factura', 'cod_cliente', 'documento');
+        return $this->hasMany('App\Models\Factura', 'cod_cliente', 'id');
     }
     
     /**
@@ -67,7 +68,7 @@ class Cliente extends Model
      */
     public function tipoDeDocumento()
     {
-        return $this->hasOne('App\Models\TipoDeDocumento', 'id_tipo_documento', 'cod_tipo_documento');
+        return $this->hasOne('App\Models\TipoDeDocumento', 'id', 'cod_tipo_documento');
     }
     
 

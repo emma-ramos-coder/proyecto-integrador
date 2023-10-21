@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Num Factura</th>
 										<th>Cod Cliente</th>
 										<th>Nombre Empleado</th>
 										<th>Fecha Facturacion</th>
@@ -52,7 +51,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $factura->num_factura }}</td>
 											<td>{{ $factura->cod_cliente }}</td>
 											<td>{{ $factura->nombre_empleado }}</td>
 											<td>{{ $factura->fecha_facturacion }}</td>

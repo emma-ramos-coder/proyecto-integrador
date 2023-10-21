@@ -12,17 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('detalle_facturas', function (Blueprint $table) {            
-            $table->string('cod_factura',20);
+            $table->id();
+            $table->unsignedBigInteger('cod_factura');
             $table->foreign('cod_factura')
-                ->references('num_factura')
+                ->references('id')
                 ->on('facturas')
                 ->onDelete('cascade');
-            $table->integer('cod_articulo');
+            $table->unsignedBigInteger('cod_articulo');
             $table->foreign('cod_articulo')
-                ->references('id_articulo')
+                ->references('id')
                 ->on('articulos')
-                ->onDelete('cascade');
-            $table->primary(['cod_factura','cod_articulo']);
+                ->onDelete('cascade');            
             $table->integer('cantidad');
             $table->decimal('total',10,0);
             $table->timestamps();

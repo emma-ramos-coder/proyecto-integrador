@@ -2,9 +2,9 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('no_documento') }}
-            {{ Form::text('no_documento', $proveedor->no_documento, ['class' => 'form-control' . ($errors->has('no_documento') ? ' is-invalid' : ''), 'placeholder' => 'No Documento']) }}
-            {!! $errors->first('no_documento', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('Num_documento') }}
+            {{ Form::text('Num_documento', $proveedor->Num_documento, ['class' => 'form-control' . ($errors->has('Num_documento') ? ' is-invalid' : ''), 'placeholder' => 'Num Documento']) }}
+            {!! $errors->first('Num_documento', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('cod_tipo_documento') }}

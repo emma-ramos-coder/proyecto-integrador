@@ -21,12 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cod Detalle Factura:</strong>
-                            {{ $devolucion->cod_detalle_factura }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cod Detalle Articulo:</strong>
-                            {{ $devolucion->cod_detalle_articulo }}
+                            <strong>Cod Detalle Facturas:</strong>
+                            {{ $devolucion->cod_detalle_facturas }}
                         </div>
                         <div class="form-group">
                             <strong>Motivo:</strong>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class TipoArticulo
  *
- * @property $id_tipo_articulo
+ * @property $id
  * @property $descripcion_articulo
  * @property $created_at
  * @property $updated_at
@@ -20,7 +20,6 @@ class TipoArticulo extends Model
 {
     
     static $rules = [
-		'id_tipo_articulo' => 'required',
 		'descripcion_articulo' => 'required',
     ];
 
@@ -31,7 +30,7 @@ class TipoArticulo extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_tipo_articulo','descripcion_articulo'];
+    protected $fillable = ['descripcion_articulo'];
 
 
     /**
@@ -39,7 +38,7 @@ class TipoArticulo extends Model
      */
     public function articulos()
     {
-        return $this->hasMany('App\Models\Articulo', 'cod_tipo_articulo', 'id_tipo_articulo');
+        return $this->hasMany('App\Models\Articulo', 'cod_tipo_articulo', 'id');
     }
     
 

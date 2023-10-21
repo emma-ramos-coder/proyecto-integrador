@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class DetalleFactura
  *
+ * @property $id
  * @property $cod_factura
  * @property $cod_articulo
  * @property $cantidad
@@ -16,7 +17,6 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property Articulo $articulo
  * @property Devolucion[] $devolucions
- * @property Devolucion $devolucion
  * @property Factura $factura
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -46,7 +46,7 @@ class DetalleFactura extends Model
      */
     public function articulo()
     {
-        return $this->hasOne('App\Models\Articulo', 'id_articulo', 'cod_articulo');
+        return $this->hasOne('App\Models\Articulo', 'id', 'cod_articulo');
     }
     
     /**
@@ -54,15 +54,7 @@ class DetalleFactura extends Model
      */
     public function devolucions()
     {
-        return $this->hasMany('App\Models\Devolucion', 'cod_detalle_articulo', 'cod_articulo');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function devolucion()
-    {
-        return $this->hasOne('App\Models\Devolucion', 'cod_detalle_factura', 'cod_factura');
+        return $this->hasMany('App\Models\Devolucion', 'cod_detalle_facturas', 'id');
     }
     
     /**
@@ -70,7 +62,7 @@ class DetalleFactura extends Model
      */
     public function factura()
     {
-        return $this->hasOne('App\Models\Factura', 'num_factura', 'cod_factura');
+        return $this->hasOne('App\Models\Factura', 'id', 'cod_factura');
     }
     
 

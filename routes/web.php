@@ -27,13 +27,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('tipo_de_documentos',TipoDeDocumentoController::class);
+Route::resource('tipo-de-documentos',TipoDeDocumentoController::class);
 Route::resource('ciudads',CiudadController::class);
-Route::resource('tipo_articulos',TipoArticuloController::class);
-Route::resource('forma_de_pagos',FormaDePagoController::class);
+Route::resource('tipo-articulos',TipoArticuloController::class);
+Route::resource('forma-de-pagos',FormaDePagoController::class);
 Route::resource('clientes',ClienteController::class);
 Route::resource('proveedors',ProveedorController::class);
 Route::resource('articulos',ArticuloController::class);
 Route::resource('facturas',FacturaController::class);
-Route::resource('detalle_facturas',DetalleFacturaController::class);
+Route::resource('detalle-facturas',DetalleFacturaController::class);
 Route::resource('devolucions',DevolucionController::class);

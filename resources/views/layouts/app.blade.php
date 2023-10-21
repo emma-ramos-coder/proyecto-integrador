@@ -31,16 +31,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tipo_de_documentos.index') }}">{{ __('T documento') }}</a>
+                            <a class="nav-link" href="{{ route('tipo-de-documentos.index') }}">{{ __('T documento') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('ciudads.index') }}">{{ __('Ciudad') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tipo_articulos.index') }}">{{ __('T articulo') }}</a>
+                            <a class="nav-link" href="{{ route('tipo-articulos.index') }}">{{ __('T articulo') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('forma_de_pagos.index') }}">{{ __('Forma pago') }}</a>
+                            <a class="nav-link" href="{{ route('forma-de-pagos.index') }}">{{ __('Forma pago') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('clientes.index') }}">{{ __('Cliente') }}</a>
@@ -55,7 +55,7 @@
                             <a class="nav-link" href="{{ route('facturas.index') }}">{{ __('Factura') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('detalle_facturas.index') }}">{{ __('Detalle Factura') }}</a>
+                            <a class="nav-link" href="{{ route('detalle-facturas.index') }}">{{ __('Detalle Factura') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('devolucions.index') }}">{{ __('Devolucion') }}</a>

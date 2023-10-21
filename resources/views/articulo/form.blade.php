@@ -2,11 +2,6 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('id_articulo') }}
-            {{ Form::text('id_articulo', $articulo->id_articulo, ['class' => 'form-control' . ($errors->has('id_articulo') ? ' is-invalid' : ''), 'placeholder' => 'Id Articulo']) }}
-            {!! $errors->first('id_articulo', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('descripcion') }}
             {{ Form::text('descripcion', $articulo->descripcion, ['class' => 'form-control' . ($errors->has('descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripcion']) }}
             {!! $errors->first('descripcion', '<div class="invalid-feedback">:message</div>') !!}

@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Proveedor
  *
- * @property $no_documento
+ * @property $id
+ * @property $Num_documento
  * @property $cod_tipo_documento
  * @property $nombre
  * @property $apellido
@@ -28,7 +29,7 @@ class Proveedor extends Model
 {
     
     static $rules = [
-		'no_documento' => 'required',
+		'Num_documento' => 'required',
 		'cod_tipo_documento' => 'required',
 		'nombre' => 'required',
 		'apellido' => 'required',
@@ -45,7 +46,7 @@ class Proveedor extends Model
      *
      * @var array
      */
-    protected $fillable = ['no_documento','cod_tipo_documento','nombre','apellido','nombre_comercial','direccion','cod_ciudad','telefono'];
+    protected $fillable = ['Num_documento','cod_tipo_documento','nombre','apellido','nombre_comercial','direccion','cod_ciudad','telefono'];
 
 
     /**
@@ -53,7 +54,7 @@ class Proveedor extends Model
      */
     public function articulos()
     {
-        return $this->hasMany('App\Models\Articulo', 'cod_proveedor', 'no_documento');
+        return $this->hasMany('App\Models\Articulo', 'cod_proveedor', 'id');
     }
     
     /**
@@ -61,7 +62,7 @@ class Proveedor extends Model
      */
     public function ciudad()
     {
-        return $this->hasOne('App\Models\Ciudad', 'codigo_ciudad', 'cod_ciudad');
+        return $this->hasOne('App\Models\Ciudad', 'id', 'cod_ciudad');
     }
     
     /**
@@ -69,7 +70,7 @@ class Proveedor extends Model
      */
     public function tipoDeDocumento()
     {
-        return $this->hasOne('App\Models\TipoDeDocumento', 'id_tipo_documento', 'cod_tipo_documento');
+        return $this->hasOne('App\Models\TipoDeDocumento', 'id', 'cod_tipo_documento');
     }
     
 

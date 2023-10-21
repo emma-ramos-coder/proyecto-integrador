@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class TipoDeDocumento
  *
- * @property $id_tipo_documento
+ * @property $id
  * @property $descripcion
  * @property $created_at
  * @property $updated_at
@@ -21,7 +21,6 @@ class TipoDeDocumento extends Model
 {
     
     static $rules = [
-		'id_tipo_documento' => 'required',
 		'descripcion' => 'required',
     ];
 
@@ -32,7 +31,7 @@ class TipoDeDocumento extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_tipo_documento','descripcion'];
+    protected $fillable = ['descripcion'];
 
 
     /**
@@ -40,7 +39,7 @@ class TipoDeDocumento extends Model
      */
     public function clientes()
     {
-        return $this->hasMany('App\Models\Cliente', 'cod_tipo_documento', 'id_tipo_documento');
+        return $this->hasMany('App\Models\Cliente', 'cod_tipo_documento', 'id');
     }
     
     /**
@@ -48,7 +47,7 @@ class TipoDeDocumento extends Model
      */
     public function proveedors()
     {
-        return $this->hasMany('App\Models\Proveedor', 'cod_tipo_documento', 'id_tipo_documento');
+        return $this->hasMany('App\Models\Proveedor', 'cod_tipo_documento', 'id');
     }
     
 

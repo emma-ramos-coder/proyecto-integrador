@@ -2,11 +2,6 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('codigo_ciudad') }}
-            {{ Form::text('codigo_ciudad', $ciudad->codigo_ciudad, ['class' => 'form-control' . ($errors->has('codigo_ciudad') ? ' is-invalid' : ''), 'placeholder' => 'Codigo Ciudad']) }}
-            {!! $errors->first('codigo_ciudad', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('nombre_ciudad') }}
             {{ Form::text('nombre_ciudad', $ciudad->nombre_ciudad, ['class' => 'form-control' . ($errors->has('nombre_ciudad') ? ' is-invalid' : ''), 'placeholder' => 'Nombre Ciudad']) }}
             {!! $errors->first('nombre_ciudad', '<div class="invalid-feedback">:message</div>') !!}

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Factura
  *
- * @property $num_factura
+ * @property $id
  * @property $cod_cliente
  * @property $nombre_empleado
  * @property $fecha_facturacion
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $updated_at
  *
  * @property Cliente $cliente
- * @property DetalleFactura $detalleFactura
+ * @property DetalleFactura[] $detalleFacturas
  * @property FormaDePago $formaDePago
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -27,7 +27,6 @@ class Factura extends Model
 {
     
     static $rules = [
-		'num_factura' => 'required',
 		'cod_cliente' => 'required',
 		'nombre_empleado' => 'required',
 		'fecha_facturacion' => 'required',
@@ -43,7 +42,7 @@ class Factura extends Model
      *
      * @var array
      */
-    protected $fillable = ['num_factura','cod_cliente','nombre_empleado','fecha_facturacion','cod_forma_pago','total_factura','iva'];
+    protected $fillable = ['cod_cliente','nombre_empleado','fecha_facturacion','cod_forma_pago','total_factura','iva'];
 
 
     /**
@@ -51,15 +50,15 @@ class Factura extends Model
      */
     public function cliente()
     {
-        return $this->hasOne('App\Models\Cliente', 'documento', 'cod_cliente');
+        return $this->hasOne('App\Models\Cliente', 'id', 'cod_cliente');
     }
     
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function detalleFactura()
+    public function detalleFacturas()
     {
-        return $this->hasOne('App\Models\DetalleFactura', 'cod_factura', 'num_factura');
+        return $this->hasMany('App\Models\DetalleFactura', 'cod_factura', 'id');
     }
     
     /**
@@ -67,7 +66,7 @@ class Factura extends Model
      */
     public function formaDePago()
     {
-        return $this->hasOne('App\Models\FormaDePago', 'id_forma_pago', 'cod_forma_pago');
+        return $this->hasOne('App\Models\FormaDePago', 'id', 'cod_forma_pago');
     }
     
 

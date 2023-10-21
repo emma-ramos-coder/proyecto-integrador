@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>No Documento</th>
+										<th>Num Documento</th>
 										<th>Cod Tipo Documento</th>
 										<th>Nombre</th>
 										<th>Apellido</th>
@@ -53,7 +53,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $proveedor->no_documento }}</td>
+											<td>{{ $proveedor->Num_documento }}</td>
 											<td>{{ $proveedor->cod_tipo_documento }}</td>
 											<td>{{ $proveedor->nombre }}</td>
 											<td>{{ $proveedor->apellido }}</td>

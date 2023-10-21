@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Ciudad
  *
- * @property $codigo_ciudad
+ * @property $id
  * @property $nombre_ciudad
  * @property $created_at
  * @property $updated_at
@@ -21,7 +21,6 @@ class Ciudad extends Model
 {
     
     static $rules = [
-		'codigo_ciudad' => 'required',
 		'nombre_ciudad' => 'required',
     ];
 
@@ -32,7 +31,7 @@ class Ciudad extends Model
      *
      * @var array
      */
-    protected $fillable = ['codigo_ciudad','nombre_ciudad'];
+    protected $fillable = ['nombre_ciudad'];
 
 
     /**
@@ -40,7 +39,7 @@ class Ciudad extends Model
      */
     public function clientes()
     {
-        return $this->hasMany('App\Models\Cliente', 'cod_ciudad', 'codigo_ciudad');
+        return $this->hasMany('App\Models\Cliente', 'cod_ciudad', 'id');
     }
     
     /**
@@ -48,7 +47,7 @@ class Ciudad extends Model
      */
     public function proveedors()
     {
-        return $this->hasMany('App\Models\Proveedor', 'cod_ciudad', 'codigo_ciudad');
+        return $this->hasMany('App\Models\Proveedor', 'cod_ciudad', 'id');
     }
     
 

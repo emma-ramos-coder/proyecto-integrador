@@ -12,21 +12,21 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('facturas', function (Blueprint $table) {
-            $table->string('num_factura',20)->primary();
-            $table->string('cod_cliente',15);
+            $table->id();
+            $table->unsignedBigInteger('cod_cliente');
             $table->foreign('cod_cliente')
-                ->references('documento')
+                ->references('id')
                 ->on('clientes')
                 ->onDelete('cascade');
             $table->string('nombre_empleado',30);
             $table->string('fecha_facturacion',15);
-            $table->integer('cod_forma_pago');
+            $table->unsignedBigInteger('cod_forma_pago');
             $table->foreign('cod_forma_pago')
-                ->references('id_forma_pago')
+                ->references('id')
                 ->on('forma_de_pagos')
                 ->onDelete('cascade');
-            $table->decimal('total_factura',10,0);
-            $table->decimal('iva',10,0);
+            $table->decimal('total_factura',10,2);
+            $table->decimal('iva',10,2);
             $table->timestamps();
         });
     }

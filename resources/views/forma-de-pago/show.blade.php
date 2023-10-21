@@ -21,10 +21,6 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Forma Pago:</strong>
-                            {{ $formaDePago->id_forma_pago }}
-                        </div>
-                        <div class="form-group">
                             <strong>Descripcion Forma Pago:</strong>
                             {{ $formaDePago->descripcion_forma_pago }}
                         </div>

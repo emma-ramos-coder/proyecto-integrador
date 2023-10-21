@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Id Forma Pago</th>
 										<th>Descripcion Forma Pago</th>
 
                                         <th></th>
@@ -47,7 +46,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $formaDePago->id_forma_pago }}</td>
 											<td>{{ $formaDePago->descripcion_forma_pago }}</td>
 
                                             <td>

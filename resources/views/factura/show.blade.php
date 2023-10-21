@@ -21,10 +21,6 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Num Factura:</strong>
-                            {{ $factura->num_factura }}
-                        </div>
-                        <div class="form-group">
                             <strong>Cod Cliente:</strong>
                             {{ $factura->cod_cliente }}
                         </div>

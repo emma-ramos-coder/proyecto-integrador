@@ -36,8 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Cod Detalle Factura</th>
-										<th>Cod Detalle Articulo</th>
+										<th>Cod Detalle Facturas</th>
 										<th>Motivo</th>
 										<th>Fecha Devolucion</th>
 										<th>Cantidad</th>
@@ -50,8 +49,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $devolucion->cod_detalle_factura }}</td>
-											<td>{{ $devolucion->cod_detalle_articulo }}</td>
+											<td>{{ $devolucion->cod_detalle_facturas }}</td>
 											<td>{{ $devolucion->motivo }}</td>
 											<td>{{ $devolucion->fecha_devolucion }}</td>
 											<td>{{ $devolucion->cantidad }}</td>

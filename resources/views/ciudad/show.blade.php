@@ -21,10 +21,6 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Codigo Ciudad:</strong>
-                            {{ $ciudad->codigo_ciudad }}
-                        </div>
-                        <div class="form-group">
                             <strong>Nombre Ciudad:</strong>
                             {{ $ciudad->nombre_ciudad }}
                         </div>

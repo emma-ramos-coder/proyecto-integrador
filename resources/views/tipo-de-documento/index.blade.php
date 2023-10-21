@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Id Tipo Documento</th>
 										<th>Descripcion</th>
 
                                         <th></th>
@@ -47,7 +46,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $tipoDeDocumento->id_tipo_documento }}</td>
 											<td>{{ $tipoDeDocumento->descripcion }}</td>
 
                                             <td>

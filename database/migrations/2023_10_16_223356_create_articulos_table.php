@@ -12,19 +12,19 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('articulos', function (Blueprint $table) {
-            $table->integer('id_articulo')->primary();
+            $table->id();
             $table->string('descripcion',30);
-            $table->decimal('precio_venta',10,0);
-            $table->decimal('precio_costo',10,0);
+            $table->decimal('precio_venta',10,2);
+            $table->decimal('precio_costo',10,2);
             $table->integer('stock');
-            $table->integer('cod_tipo_articulo');
+            $table->unsignedBigInteger('cod_tipo_articulo');
             $table->foreign('cod_tipo_articulo')
-                ->references('id_tipo_articulo')
+                ->references('id')
                 ->on('tipo_articulos')
                 ->onDelete('cascade');
-            $table->string('cod_proveedor',20);
+            $table->unsignedBigInteger('cod_proveedor');
             $table->foreign('cod_proveedor')
-                ->references('no_documento')
+                ->references('id')
                 ->on('proveedors')
                 ->onDelete('cascade');
             $table->string('fecha_ingreso',15);

@@ -21,10 +21,6 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Tipo Articulo:</strong>
-                            {{ $tipoArticulo->id_tipo_articulo }}
-                        </div>
-                        <div class="form-group">
                             <strong>Descripcion Articulo:</strong>
                             {{ $tipoArticulo->descripcion_articulo }}
                         </div>

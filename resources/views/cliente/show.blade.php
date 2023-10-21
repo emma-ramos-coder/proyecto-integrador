@@ -21,8 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Documento:</strong>
-                            {{ $cliente->documento }}
+                            <strong>Num Documento:</strong>
+                            {{ $cliente->num_documento }}
                         </div>
                         <div class="form-group">
                             <strong>Cod Tipo Documento:</strong>

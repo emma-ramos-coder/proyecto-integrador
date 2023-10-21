@@ -36,7 +36,6 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Codigo Ciudad</th>
 										<th>Nombre Ciudad</th>
 
                                         <th></th>
@@ -47,7 +46,6 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $ciudad->codigo_ciudad }}</td>
 											<td>{{ $ciudad->nombre_ciudad }}</td>
 
                                             <td>
