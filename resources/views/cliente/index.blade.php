@@ -34,32 +34,28 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
+                                        <th>No</th>                                        
 										<th>Num Documento</th>
-										<th>Cod Tipo Documento</th>
+										<th>Tipo Documento</th>
 										<th>Nombres</th>
 										<th>Apellidos</th>
 										<th>Direccion</th>
-										<th>Cod Ciudad</th>
+										<th>Ciudad</th>
 										<th>Telefono</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($clientes as $cliente)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
+                                            <td>{{ ++$i }}</td>                                            
 											<td>{{ $cliente->num_documento }}</td>
-											<td>{{ $cliente->cod_tipo_documento }}</td>
+											<td>{{ $cliente->tipoDeDocumento->descripcion }}</td>
 											<td>{{ $cliente->nombres }}</td>
 											<td>{{ $cliente->apellidos }}</td>
 											<td>{{ $cliente->direccion }}</td>
-											<td>{{ $cliente->cod_ciudad }}</td>
+											<td>{{ $cliente->ciudad->nombre_ciudad }}</td>
 											<td>{{ $cliente->telefono }}</td>
-
                                             <td>
                                                 <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>

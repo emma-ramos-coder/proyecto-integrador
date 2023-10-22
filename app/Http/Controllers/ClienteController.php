@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cliente;
+use App\Models\TipoDeDocumento;
+use App\Models\Ciudad;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +34,9 @@ class ClienteController extends Controller
     public function create()
     {
         $cliente = new Cliente();
-        return view('cliente.create', compact('cliente'));
+        $tipo_de_documentos = TipoDeDocumento::pluck('descripcion','id');
+        $ciudads = Ciudad::pluck('nombre_ciudad','id');
+        return view('cliente.create', compact('cliente','tipo_de_documentos','ciudads'));
     }
 
     /**
@@ -73,8 +77,9 @@ class ClienteController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::find($id);
-
-        return view('cliente.edit', compact('cliente'));
+        $tipo_de_documentos = TipoDeDocumento::pluck('descripcion','id');
+        $ciudads = Ciudad::pluck('nombre_ciudad','id');
+        return view('cliente.edit', compact('cliente','tipo_de_documentos','ciudads'));
     }
 
     /**

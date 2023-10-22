@@ -18,15 +18,14 @@
                         </div>
                     </div>
 
-                    <div class="card-body">
-                        
+                    <div class="card-body">                        
                         <div class="form-group">
                             <strong>Num Documento:</strong>
                             {{ $cliente->num_documento }}
                         </div>
                         <div class="form-group">
-                            <strong>Cod Tipo Documento:</strong>
-                            {{ $cliente->cod_tipo_documento }}
+                            <strong>Tipo Documento:</strong>
+                            {{ $cliente->tipoDeDocumento->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Nombres:</strong>
@@ -41,14 +40,13 @@
                             {{ $cliente->direccion }}
                         </div>
                         <div class="form-group">
-                            <strong>Cod Ciudad:</strong>
-                            {{ $cliente->cod_ciudad }}
+                            <strong>Ciudad:</strong>
+                            {{ $cliente->ciudad->nombre_ciudad }}
                         </div>
                         <div class="form-group">
                             <strong>Telefono:</strong>
                             {{ $cliente->telefono }}
                         </div>
-
                     </div>
                 </div>
             </div>
