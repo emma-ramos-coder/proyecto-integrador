@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Articulo;
+use App\Models\TipoArticulo;
+use App\Models\Proveedor;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +34,9 @@ class ArticuloController extends Controller
     public function create()
     {
         $articulo = new Articulo();
-        return view('articulo.create', compact('articulo'));
+        $tipo_articulos = TipoArticulo::pluck('descripcion_articulo','id');
+        $proveedors = Proveedor::pluck('nombre_comercial','id');
+        return view('articulo.create', compact('articulo','tipo_articulos','proveedors'));
     }
 
     /**
@@ -73,8 +77,9 @@ class ArticuloController extends Controller
     public function edit($id)
     {
         $articulo = Articulo::find($id);
-
-        return view('articulo.edit', compact('articulo'));
+        $tipo_articulos = TipoArticulo::pluck('descripcion_articulo','id');
+        $proveedors = Proveedor::pluck('nombre_comercial','id');
+        return view('articulo.edit', compact('articulo','tipo_articulos','proveedors'));
     }
 
     /**

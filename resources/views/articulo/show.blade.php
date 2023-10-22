@@ -37,12 +37,12 @@
                             {{ $articulo->stock }}
                         </div>
                         <div class="form-group">
-                            <strong>Cod Tipo Articulo:</strong>
-                            {{ $articulo->cod_tipo_articulo }}
+                            <strong>Tipo Articulo:</strong>
+                            {{ $articulo->tipoArticulo->descripcion_articulo }}
                         </div>
                         <div class="form-group">
-                            <strong>Cod Proveedor:</strong>
-                            {{ $articulo->cod_proveedor }}
+                            <strong>Proveedor:</strong>
+                            {{ $articulo->proveedor->nombre_comercial }}
                         </div>
                         <div class="form-group">
                             <strong>Fecha Ingreso:</strong>

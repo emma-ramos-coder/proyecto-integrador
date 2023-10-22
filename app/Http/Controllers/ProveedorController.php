@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Proveedor;
+use App\Models\TipoDeDocumento;
+use App\Models\Ciudad;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +34,9 @@ class ProveedorController extends Controller
     public function create()
     {
         $proveedor = new Proveedor();
-        return view('proveedor.create', compact('proveedor'));
+        $tipo_de_documentos = TipoDeDocumento::pluck('descripcion','id');
+        $ciudads = Ciudad::pluck('nombre_ciudad','id');
+        return view('proveedor.create', compact('proveedor','tipo_de_documentos','ciudads'));
     }
 
     /**
@@ -73,8 +77,9 @@ class ProveedorController extends Controller
     public function edit($id)
     {
         $proveedor = Proveedor::find($id);
-
-        return view('proveedor.edit', compact('proveedor'));
+        $tipo_de_documentos = TipoDeDocumento::pluck('descripcion','id');
+        $ciudads = Ciudad::pluck('nombre_ciudad','id');
+        return view('proveedor.edit', compact('proveedor','tipo_de_documentos','ciudads'));
     }
 
     /**

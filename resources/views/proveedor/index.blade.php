@@ -34,34 +34,30 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
+                                        <th>No</th>                                        
 										<th>Num Documento</th>
-										<th>Cod Tipo Documento</th>
+										<th>Tipo Documento</th>
 										<th>Nombre</th>
 										<th>Apellido</th>
 										<th>Nombre Comercial</th>
 										<th>Direccion</th>
-										<th>Cod Ciudad</th>
+										<th>Ciudad</th>
 										<th>Telefono</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($proveedors as $proveedor)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
+                                            <td>{{ ++$i }}</td>                                            
 											<td>{{ $proveedor->Num_documento }}</td>
-											<td>{{ $proveedor->cod_tipo_documento }}</td>
+											<td>{{ $proveedor->tipoDeDocumento->descripcion }}</td>
 											<td>{{ $proveedor->nombre }}</td>
 											<td>{{ $proveedor->apellido }}</td>
 											<td>{{ $proveedor->nombre_comercial }}</td>
 											<td>{{ $proveedor->direccion }}</td>
-											<td>{{ $proveedor->cod_ciudad }}</td>
+											<td>{{ $proveedor->ciudad->nombre_ciudad }}</td>
 											<td>{{ $proveedor->telefono }}</td>
-
                                             <td>
                                                 <form action="{{ route('proveedors.destroy',$proveedor->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('proveedors.show',$proveedor->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>

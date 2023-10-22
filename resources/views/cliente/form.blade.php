@@ -7,7 +7,7 @@
         </div>        
         <div class="form-group">
             {{ Form::label('tipo_documento') }}
-            {{ Form::select('cod_tipo_documento', $tipo_de_documentos , $cliente->cod_tipo_documento, ['class' => 'form-control' . ($errors->has('cod_tipo_documento') ? ' is-invalid' : ''), 'placeholder' => 'Cod Tipo Documento']) }}
+            {{ Form::select('cod_tipo_documento', $tipo_de_documentos , $cliente->cod_tipo_documento, ['class' => 'form-control' . ($errors->has('cod_tipo_documento') ? ' is-invalid' : ''), 'placeholder' => 'Tipo Documento']) }}
             {!! $errors->first('cod_tipo_documento', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -27,7 +27,7 @@
         </div>      
         <div class="form-group">
             {{ Form::label('ciudad') }}
-            {{ Form::select('cod_ciudad', $ciudads, $cliente->cod_ciudad, ['class' => 'form-control' . ($errors->has('cod_ciudad') ? ' is-invalid' : ''), 'placeholder' => 'Cod Ciudad']) }}
+            {{ Form::select('cod_ciudad', $ciudads, $cliente->cod_ciudad, ['class' => 'form-control' . ($errors->has('cod_ciudad') ? ' is-invalid' : ''), 'placeholder' => 'Ciudad']) }}
             {!! $errors->first('cod_ciudad', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

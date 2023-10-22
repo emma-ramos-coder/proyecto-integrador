@@ -25,8 +25,8 @@
                             {{ $proveedor->Num_documento }}
                         </div>
                         <div class="form-group">
-                            <strong>Cod Tipo Documento:</strong>
-                            {{ $proveedor->cod_tipo_documento }}
+                            <strong>Tipo Documento:</strong>
+                            {{ $proveedor->tipoDeDocumento->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Nombre:</strong>
@@ -45,8 +45,8 @@
                             {{ $proveedor->direccion }}
                         </div>
                         <div class="form-group">
-                            <strong>Cod Ciudad:</strong>
-                            {{ $proveedor->cod_ciudad }}
+                            <strong>Ciudad:</strong>
+                            {{ $proveedor->ciudad->nombre_ciudad }}
                         </div>
                         <div class="form-group">
                             <strong>Telefono:</strong>

@@ -2,8 +2,8 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('cod_cliente') }}
-            {{ Form::text('cod_cliente', $factura->cod_cliente, ['class' => 'form-control' . ($errors->has('cod_cliente') ? ' is-invalid' : ''), 'placeholder' => 'Cod Cliente']) }}
+            {{ Form::label('cliente') }}
+            {{ Form::select('cod_cliente',$clientes, $factura->cod_cliente, ['class' => 'form-control' . ($errors->has('cod_cliente') ? ' is-invalid' : ''), 'placeholder' => 'Cliente']) }}
             {!! $errors->first('cod_cliente', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -17,8 +17,8 @@
             {!! $errors->first('fecha_facturacion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('cod_forma_pago') }}
-            {{ Form::text('cod_forma_pago', $factura->cod_forma_pago, ['class' => 'form-control' . ($errors->has('cod_forma_pago') ? ' is-invalid' : ''), 'placeholder' => 'Cod Forma Pago']) }}
+            {{ Form::label('forma_pago') }}
+            {{ Form::select('cod_forma_pago', $forma_de_pagos ,$factura->cod_forma_pago, ['class' => 'form-control' . ($errors->has('cod_forma_pago') ? ' is-invalid' : ''), 'placeholder' => 'Forma Pago']) }}
             {!! $errors->first('cod_forma_pago', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

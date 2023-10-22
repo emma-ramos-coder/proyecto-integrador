@@ -27,13 +27,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('tipo-de-documentos',TipoDeDocumentoController::class);
-Route::resource('ciudads',CiudadController::class);
-Route::resource('tipo-articulos',TipoArticuloController::class);
-Route::resource('forma-de-pagos',FormaDePagoController::class);
-Route::resource('clientes',ClienteController::class);
-Route::resource('proveedors',ProveedorController::class);
-Route::resource('articulos',ArticuloController::class);
-Route::resource('facturas',FacturaController::class);
-Route::resource('detalle-facturas',DetalleFacturaController::class);
-Route::resource('devolucions',DevolucionController::class);
+Route::resource('tipo-de-documentos',TipoDeDocumentoController::class)->middleware('auth');
+Route::resource('ciudads',CiudadController::class)->middleware('auth');
+Route::resource('tipo-articulos',TipoArticuloController::class)->middleware('auth');
+Route::resource('forma-de-pagos',FormaDePagoController::class)->middleware('auth');
+Route::resource('clientes',ClienteController::class)->middleware('auth');
+Route::resource('proveedors',ProveedorController::class)->middleware('auth');
+Route::resource('articulos',ArticuloController::class)->middleware('auth');
+Route::resource('facturas',FacturaController::class)->middleware('auth');
+Route::resource('detalle-facturas',DetalleFacturaController::class)->middleware('auth');
+Route::resource('devolucions',DevolucionController::class)->middleware('auth');

@@ -34,32 +34,28 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
+                                        <th>No</th>                                        
 										<th>Descripcion</th>
 										<th>Precio Venta</th>
 										<th>Precio Costo</th>
 										<th>Stock</th>
-										<th>Cod Tipo Articulo</th>
-										<th>Cod Proveedor</th>
+										<th>Tipo Articulo</th>
+										<th>Proveedor</th>
 										<th>Fecha Ingreso</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($articulos as $articulo)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
+                                            <td>{{ ++$i }}</td>                                            
 											<td>{{ $articulo->descripcion }}</td>
 											<td>{{ $articulo->precio_venta }}</td>
 											<td>{{ $articulo->precio_costo }}</td>
 											<td>{{ $articulo->stock }}</td>
-											<td>{{ $articulo->cod_tipo_articulo }}</td>
-											<td>{{ $articulo->cod_proveedor }}</td>
+											<td>{{ $articulo->tipoArticulo->descripcion_articulo }}</td>
+											<td>{{ $articulo->proveedor->nombre_comercial }}</td>
 											<td>{{ $articulo->fecha_ingreso }}</td>
-
                                             <td>
                                                 <form action="{{ route('articulos.destroy',$articulo->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('articulos.show',$articulo->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
