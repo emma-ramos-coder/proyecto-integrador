@@ -21,12 +21,12 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cod Factura:</strong>
+                            <strong>Factura:</strong>
                             {{ $detalleFactura->cod_factura }}
                         </div>
                         <div class="form-group">
-                            <strong>Cod Articulo:</strong>
-                            {{ $detalleFactura->cod_articulo }}
+                            <strong>Articulo:</strong>
+                            {{ $detalleFactura->articulo->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Cantidad:</strong>

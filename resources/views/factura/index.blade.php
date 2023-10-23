@@ -34,27 +34,24 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Cod Cliente</th>
+                                        <th>No</th>                                        
+										<th>Cliente</th>
 										<th>Nombre Empleado</th>
 										<th>Fecha Facturacion</th>
-										<th>Cod Forma Pago</th>
+										<th>Forma Pago</th>
 										<th>Total Factura</th>
 										<th>Iva</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($facturas as $factura)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $factura->cod_cliente }}</td>
+                                            <td>{{ ++$i }}</td>                                            
+											<td>{{ $factura->cliente->nombres }}</td>
 											<td>{{ $factura->nombre_empleado }}</td>
 											<td>{{ $factura->fecha_facturacion }}</td>
-											<td>{{ $factura->cod_forma_pago }}</td>
+											<td>{{ $factura->formaDePago->descripcion_forma_pago }}</td>
 											<td>{{ $factura->total_factura }}</td>
 											<td>{{ $factura->iva }}</td>
 

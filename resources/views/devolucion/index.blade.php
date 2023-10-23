@@ -34,22 +34,19 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
+                                        <th>No</th>                                        
 										<th>Cod Detalle Facturas</th>
 										<th>Motivo</th>
 										<th>Fecha Devolucion</th>
 										<th>Cantidad</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($devolucions as $devolucion)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $devolucion->cod_detalle_facturas }}</td>
+                                            <td>{{ ++$i }}</td>                                            
+											<td>{{ $devolucion->detalleFactura->id }}</td>
 											<td>{{ $devolucion->motivo }}</td>
 											<td>{{ $devolucion->fecha_devolucion }}</td>
 											<td>{{ $devolucion->cantidad }}</td>

@@ -34,7 +34,7 @@ class FacturaController extends Controller
     public function create()
     {
         $factura = new Factura();
-        $clientes = Cliente::pluck('nombres','apellidos','id');
+        $clientes = Cliente::pluck('nombres','id');
         $forma_de_pagos = FormaDePago::pluck('descripcion_forma_pago','id');
         return view('factura.create', compact('factura','clientes','forma_de_pagos'));
     }
@@ -77,7 +77,7 @@ class FacturaController extends Controller
     public function edit($id)
     {
         $factura = Factura::find($id);
-        $clientes = Cliente::pluck('nombres'.' '.'apellidos','id');
+        $clientes = Cliente::pluck('nombres','id');
         $forma_de_pagos = FormaDePago::pluck('descripcion_forma_pago','id');
         return view('factura.edit', compact('factura', 'clientes','forma_de_pagos'));
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DetalleFactura;
 use App\Models\Devolucion;
 use Illuminate\Http\Request;
 
@@ -32,7 +33,8 @@ class DevolucionController extends Controller
     public function create()
     {
         $devolucion = new Devolucion();
-        return view('devolucion.create', compact('devolucion'));
+        $detalle_facturas = DetalleFactura::pluck('id','id');
+        return view('devolucion.create', compact('devolucion','detalle_facturas'));
     }
 
     /**
@@ -73,8 +75,8 @@ class DevolucionController extends Controller
     public function edit($id)
     {
         $devolucion = Devolucion::find($id);
-
-        return view('devolucion.edit', compact('devolucion'));
+        $detalle_facturas = DetalleFactura::pluck('id','id');
+        return view('devolucion.edit', compact('devolucion','detalle_facturas'));
     }
 
     /**

@@ -2,13 +2,13 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('cod_factura') }}
-            {{ Form::text('cod_factura', $detalleFactura->cod_factura, ['class' => 'form-control' . ($errors->has('cod_factura') ? ' is-invalid' : ''), 'placeholder' => 'Cod Factura']) }}
+            {{ Form::label('Factura') }}
+            {{ Form::select('cod_factura', $facturas, $detalleFactura->cod_factura, ['class' => 'form-control' . ($errors->has('cod_factura') ? ' is-invalid' : ''), 'placeholder' => 'Factura']) }}
             {!! $errors->first('cod_factura', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('cod_articulo') }}
-            {{ Form::text('cod_articulo', $detalleFactura->cod_articulo, ['class' => 'form-control' . ($errors->has('cod_articulo') ? ' is-invalid' : ''), 'placeholder' => 'Cod Articulo']) }}
+            {{ Form::label('Articulo') }}
+            {{ Form::select('cod_articulo', $articulos,  $detalleFactura->cod_articulo, ['class' => 'form-control' . ($errors->has('cod_articulo') ? ' is-invalid' : ''), 'placeholder' => 'Articulo']) }}
             {!! $errors->first('cod_articulo', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

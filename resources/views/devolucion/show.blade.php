@@ -22,7 +22,7 @@
                         
                         <div class="form-group">
                             <strong>Cod Detalle Facturas:</strong>
-                            {{ $devolucion->cod_detalle_facturas }}
+                            {{ $devolucion->detalleFactura->id  }}
                         </div>
                         <div class="form-group">
                             <strong>Motivo:</strong>

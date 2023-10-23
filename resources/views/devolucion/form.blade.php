@@ -2,8 +2,8 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('cod_detalle_facturas') }}
-            {{ Form::text('cod_detalle_facturas', $devolucion->cod_detalle_facturas, ['class' => 'form-control' . ($errors->has('cod_detalle_facturas') ? ' is-invalid' : ''), 'placeholder' => 'Cod Detalle Facturas']) }}
+            {{ Form::label('Cod detalle factura') }}
+            {{ Form::select('cod_detalle_facturas', $detalle_facturas, $devolucion->cod_detalle_facturas, ['class' => 'form-control' . ($errors->has('cod_detalle_facturas') ? ' is-invalid' : ''), 'placeholder' => 'Cod Detalle Facturas']) }}
             {!! $errors->first('cod_detalle_facturas', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

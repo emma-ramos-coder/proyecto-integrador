@@ -21,8 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cod Cliente:</strong>
-                            {{ $factura->cod_cliente }}
+                            <strong>Cliente:</strong>
+                            {{ $factura->cliente->nombres }}
                         </div>
                         <div class="form-group">
                             <strong>Nombre Empleado:</strong>
@@ -33,8 +33,8 @@
                             {{ $factura->fecha_facturacion }}
                         </div>
                         <div class="form-group">
-                            <strong>Cod Forma Pago:</strong>
-                            {{ $factura->cod_forma_pago }}
+                            <strong>Forma de Pago:</strong>
+                            {{ $factura->formaDePago->descripcion_forma_pago }}
                         </div>
                         <div class="form-group">
                             <strong>Total Factura:</strong>

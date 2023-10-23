@@ -3,7 +3,7 @@
         
         <div class="form-group">
             {{ Form::label('cliente') }}
-            {{ Form::select('cod_cliente',$clientes, $factura->cod_cliente, ['class' => 'form-control' . ($errors->has('cod_cliente') ? ' is-invalid' : ''), 'placeholder' => 'Cliente']) }}
+            {{ Form::select('cod_cliente', $clientes, $factura->cod_cliente, ['class' => 'form-control' . ($errors->has('cod_cliente') ? ' is-invalid' : ''), 'placeholder' => 'Cliente']) }}
             {!! $errors->first('cod_cliente', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

@@ -24,7 +24,7 @@ return new class extends Migration
                 ->on('articulos')
                 ->onDelete('cascade');            
             $table->integer('cantidad');
-            $table->decimal('total',10,0);
+            $table->decimal('total',10,2);
             $table->timestamps();
         });
     }

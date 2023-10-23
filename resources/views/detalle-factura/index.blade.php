@@ -34,13 +34,11 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Cod Factura</th>
-										<th>Cod Articulo</th>
+                                        <th>No</th>                                        
+										<th>Factura</th>
+										<th>Articulo</th>
 										<th>Cantidad</th>
 										<th>Total</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -50,7 +48,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $detalleFactura->cod_factura }}</td>
-											<td>{{ $detalleFactura->cod_articulo }}</td>
+											<td>{{ $detalleFactura->articulo->descripcion }}</td>
 											<td>{{ $detalleFactura->cantidad }}</td>
 											<td>{{ $detalleFactura->total }}</td>
 

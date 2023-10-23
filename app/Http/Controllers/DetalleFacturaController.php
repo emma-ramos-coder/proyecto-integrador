@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Articulo;
 use App\Models\DetalleFactura;
+use App\Models\Factura;
 use Illuminate\Http\Request;
 
 /**
@@ -19,7 +21,7 @@ class DetalleFacturaController extends Controller
     public function index()
     {
         $detalleFacturas = DetalleFactura::paginate();
-
+        
         return view('detalle-factura.index', compact('detalleFacturas'))
             ->with('i', (request()->input('page', 1) - 1) * $detalleFacturas->perPage());
     }
@@ -32,7 +34,9 @@ class DetalleFacturaController extends Controller
     public function create()
     {
         $detalleFactura = new DetalleFactura();
-        return view('detalle-factura.create', compact('detalleFactura'));
+        $facturas = Factura::pluck('id','id');
+        $articulos = Articulo::pluck('descripcion','id');
+        return view('detalle-factura.create', compact('detalleFactura','facturas','articulos'));
     }
 
     /**
@@ -60,7 +64,7 @@ class DetalleFacturaController extends Controller
     public function show($id)
     {
         $detalleFactura = DetalleFactura::find($id);
-
+        
         return view('detalle-factura.show', compact('detalleFactura'));
     }
 
@@ -73,8 +77,9 @@ class DetalleFacturaController extends Controller
     public function edit($id)
     {
         $detalleFactura = DetalleFactura::find($id);
-
-        return view('detalle-factura.edit', compact('detalleFactura'));
+        $facturas = Factura::pluck('id','id');
+        $articulos = Articulo::pluck('descripcion','id');
+        return view('detalle-factura.edit', compact('detalleFactura','facturas','articulos'));
     }
 
     /**
