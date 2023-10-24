@@ -37,3 +37,9 @@ Route::resource('articulos',ArticuloController::class)->middleware('auth');
 Route::resource('facturas',FacturaController::class)->middleware('auth');
 Route::resource('detalle-facturas',DetalleFacturaController::class)->middleware('auth');
 Route::resource('devolucions',DevolucionController::class)->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', function() {
+    return view('home');
+})->name('home')->middleware('auth');
